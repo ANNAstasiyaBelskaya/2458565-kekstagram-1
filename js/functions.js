@@ -1,7 +1,7 @@
 //2.1 Функция для проверки, является ли строка палиндромом.
 
 function isPalindrome (string) {
-  string = string.toUpperCase();
+  string = string.toUpperCase().replaceAll(' ', '');
   const reverseString = string.split('').reverse().join('');
 
   return string === reverseString;
@@ -10,18 +10,7 @@ function isPalindrome (string) {
 isPalindrome('топот'); // true
 isPalindrome('ДовОд'); // true
 isPalindrome('Кекс'); // false
-
-
-//2.1* Проверка на палиндром, если строка с пробелами.
-
-function getPalindrome (string) {
-  string = string.toLowerCase().replaceAll(' ', '');
-  const reverseString = string.split('').reverse().join('');
-
-  return string === reverseString;
-}
-
-getPalindrome('Лёша на полке клопа нашёл '); // true
+isPalindrome('Лёша на полке клопа нашёл '); // true
 
 
 //2.2 Функция, которая принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть NaN.
@@ -93,9 +82,7 @@ getNewString('qwerty', 4, '0'); // 'qwerty'
 
 //2.4 Функция для проверки длины строки. Она принимает строку, которую нужно проверить, и максимальную длину и возвращает true, если строка меньше или равна указанной длине, и false, если строка длиннее.
 
-function checkLength (string, length) {
-  return string.length <= length;
-}
+const checkLength = (string, length) => string.length <= length;
 
 // Cтрока короче 20 символов
 checkLength('проверяемая строка', 20); // true
