@@ -7,4 +7,4 @@ const generatePositiveRandomInteger = (min, max) => {
 
 const getRandomElement = (elements) => elements[generatePositiveRandomInteger(0, elements.length - 1)];
 
-export {getRandomElement};
+export {generatePositiveRandomInteger, getRandomElement};
